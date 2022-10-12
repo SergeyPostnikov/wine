@@ -2,6 +2,7 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from datetime import datetime
+from storage import get_records
 
 
 def get_noun(years):
@@ -27,7 +28,8 @@ then = datetime(year=1920, month=1, day=1)
 years = (datetime.now() - then).days // 365
 rendered_page = template.render(
     winery_age=years, 
-    noun=get_noun(years)
+    noun=get_noun(years),
+    records=get_records() 
 )
 
 with open('index.html', 'w', encoding="utf8") as file:
