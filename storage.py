@@ -3,15 +3,15 @@ from collections import defaultdict
 
 
 def get_records():
-    goods = defaultdict(list)
+    records = defaultdict(list)
     excel_data_df = pandas.read_excel(
         'wine.xlsx', 
         sheet_name='Лист1',
         na_values=None, 
         keep_default_na=False)
     for product in excel_data_df.to_dict(orient='records'):
-        goods[product['Категория']].append(product)
-    return goods
+        records[product['Категория']].append(product)
+    return records
 
 
 if __name__ == '__main__':
