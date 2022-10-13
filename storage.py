@@ -1,19 +1,16 @@
 import pandas
+from collections import defaultdict
 
 
 def get_records():
-    goods = {}
+    goods = defaultdict(list)
     excel_data_df = pandas.read_excel(
         'wine.xlsx', 
         sheet_name='Лист1',
         na_values=None, 
         keep_default_na=False)
-
     for product in excel_data_df.to_dict(orient='records'):
-        if product['Категория'] in goods:
-            goods[product['Категория']].append(product)
-        else:
-            goods[product['Категория']] = [product]
+        goods[product['Категория']].append(product)
     return goods
 
 
