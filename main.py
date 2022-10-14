@@ -25,10 +25,10 @@ template = env.get_template('template.html')
 
 
 
-years = datetime.now().year - 1920
+delta_years = datetime.now().year - 1920
 rendered_page = template.render(
-    winery_age=years, 
-    noun=get_noun(years),
+    winery_age=delta_years, 
+    noun=get_noun(delta_years),
     records=get_records() 
 )
 
