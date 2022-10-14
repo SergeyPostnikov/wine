@@ -7,6 +7,7 @@ import os
 from dotenv import load_dotenv
 import argparse
 
+
 def get_noun(years):
     if 11 <= years % 100 <= 19:
         return 'лет'
@@ -21,9 +22,11 @@ def get_noun(years):
 if __name__ == '__main__':
     load_dotenv()
     parser = argparse.ArgumentParser()
-    parser.add_argument('storage', help='storage location')
+    parser.add_argument(
+        '--storage', 
+        help='storage location', 
+        default='wine.xlsx')
     args = parser.parse_args()
-    print(args.name)
 
     env = Environment(
         loader=FileSystemLoader('.'),
@@ -36,7 +39,7 @@ if __name__ == '__main__':
     rendered_page = template.render(
         winery_age=delta_years, 
         noun=get_noun(delta_years),
-        records=get_records(os.getenv("PATH_TO_STORAGE"), default='wine.xlsx') 
+        records=get_records(os.getenv("PATH_TO_STORAGE", default=args.storage)) 
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
