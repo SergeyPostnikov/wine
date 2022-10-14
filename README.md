@@ -9,7 +9,7 @@ git clone https://github.com/SergeyPostnikov/wine.git
 cd wine
 python -m venv env
 env\Scripts\activate
-python pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ## Запуск
 выполните командy
