@@ -9,7 +9,7 @@ git clone https://github.com/SergeyPostnikov/wine.git
 python3 pip install -r requirements.txt
 ```
 ## Запуск
-выполните команды
+выполните командy
 ```
 python3 main.py
 ```
