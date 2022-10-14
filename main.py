@@ -24,8 +24,8 @@ env = Environment(
 template = env.get_template('template.html')
 
 
-then = datetime(year=1920, month=1, day=1)
-years = (datetime.now() - then).days // 365
+
+years = datetime.now().year - 1920
 rendered_page = template.render(
     winery_age=years, 
     noun=get_noun(years),
