@@ -7,14 +7,14 @@
 ```
 git clone https://github.com/SergeyPostnikov/wine.git
 cd wine
-python3 -m venv env
+python -m venv env
 env\Scripts\activate
-python3 pip install -r requirements.txt
+python pip install -r requirements.txt
 ```
 ## Запуск
 выполните командy
 ```
-python3 main.py
+python main.py
 ```
 Перейдите на сайт по адресу [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
