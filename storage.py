@@ -1,11 +1,12 @@
 import pandas
+import os
 from collections import defaultdict
 
 
-def get_records():
+def get_records(io):
     records = defaultdict(list)
     excel_data_df = pandas.read_excel(
-        'wine.xlsx', 
+        io=io, 
         sheet_name='Лист1',
         na_values=None, 
         keep_default_na=False)
@@ -16,4 +17,4 @@ def get_records():
 
 if __name__ == '__main__':
     from pprint import pprint
-    pprint(get_records())
+    pprint(get_records('wine.xlsx'))
