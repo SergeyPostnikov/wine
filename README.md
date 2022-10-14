@@ -6,6 +6,7 @@
 выполните команды
 ```
 git clone https://github.com/SergeyPostnikov/wine.git
+cd wine
 python3 pip install -r requirements.txt
 ```
 ## Запуск
