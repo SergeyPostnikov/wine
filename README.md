@@ -7,6 +7,8 @@
 ```
 git clone https://github.com/SergeyPostnikov/wine.git
 cd wine
+python3 -m venv env
+env\Scripts\activate
 python3 pip install -r requirements.txt
 ```
 ## Запуск
