@@ -2,10 +2,10 @@ import pandas
 from collections import defaultdict
 
 
-def get_products(io):
+def get_products(filename: str) -> defaultdict:
     products = defaultdict(list)
     excel_data_df = pandas.read_excel(
-        io=io, 
+        io=filename, 
         sheet_name='Лист1',
         na_values=None, 
         keep_default_na=False)
@@ -16,4 +16,4 @@ def get_products(io):
 
 if __name__ == '__main__':
     from pprint import pprint
-    pprint(get_records('wine.xlsx'))
+    pprint(get_products('wine.xlsx'))
