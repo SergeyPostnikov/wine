@@ -2,7 +2,7 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from datetime import datetime
-from storage import get_records
+from storage import get_products
 import os
 from dotenv import load_dotenv
 import argparse
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     rendered_page = template.render(
         winery_age=winery_age, 
         noun=get_noun(winery_age),
-        records=get_records(os.getenv("PATH_TO_STORAGE", default=args.storage)) 
+        records=get_products(os.getenv("PATH_TO_STORAGE", default=args.storage)) 
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
