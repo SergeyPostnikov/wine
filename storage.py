@@ -2,10 +2,10 @@ import pandas
 from collections import defaultdict
 
 
-def get_products(filename: str) -> defaultdict:
+def get_products(filepath: str) -> defaultdict:
     products = defaultdict(list)
     excel_data_df = pandas.read_excel(
-        io=filename, 
+        io=filepath, 
         sheet_name='Лист1',
         na_values=None, 
         keep_default_na=False)
