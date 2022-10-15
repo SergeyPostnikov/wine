@@ -24,8 +24,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--storage', 
-        help='storage location', 
-        default='wine.xlsx')
+        help='storage location')
     args = parser.parse_args()
 
     env = Environment(
@@ -37,10 +36,11 @@ if __name__ == '__main__':
 
     foundation_year = 1920
     winery_age = datetime.now().year - foundation_year
+    filepath = args.storage if args.storage else os.getenv("PATH_TO_STORAGE", default='wine.xlsx')
     rendered_page = template.render(
         winery_age=winery_age, 
         noun=get_noun(winery_age),
-        records=get_products(os.getenv("PATH_TO_STORAGE", default=args.storage)) 
+        records=get_products() 
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
