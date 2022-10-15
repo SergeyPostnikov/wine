@@ -35,10 +35,10 @@ if __name__ == '__main__':
 
     template = env.get_template('template.html')
 
-    delta_years = datetime.now().year - 1920
+    winery_age = datetime.now().year - 1920
     rendered_page = template.render(
-        winery_age=delta_years, 
-        noun=get_noun(delta_years),
+        winery_age=winery_age, 
+        noun=get_noun(winery_age),
         records=get_records(os.getenv("PATH_TO_STORAGE", default=args.storage)) 
     )
 
