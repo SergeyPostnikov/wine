@@ -40,7 +40,7 @@ if __name__ == '__main__':
     rendered_page = template.render(
         winery_age=winery_age, 
         noun=get_noun(winery_age),
-        records=get_products() 
+        records=get_products(filepath) 
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
