@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
-Перейдите на сайт по адресу [http://127.0.0.1:5000](http://127.0.0.1:5000/index.html).
+Перейдите на сайт по адресу [http://127.0.0.1:5000/index.html](http://127.0.0.1:5000/index.html).
 
 
 
